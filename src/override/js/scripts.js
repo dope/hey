@@ -1,5 +1,5 @@
 // Background Refresh (Images by unsplash.com)
-var totalCount = 8;
+var totalCount = 13;
 var num = Math.ceil( Math.random() * totalCount );
 document.body.background = 'images/background-'+num+'.jpg';
 

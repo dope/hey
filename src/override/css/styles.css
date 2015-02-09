@@ -45,12 +45,26 @@ body {
 }
 
 #day {
-    border: 2px solid #ffffff;
+    position: relative;
     display: inline-block;
-    padding: .8em 1em;
+    background: rgba(0,0,0,.5);
+    padding: 1em 1.2em;
     margin-top: 2em;
     text-transform: uppercase;
     letter-spacing: .4vh;
-    font-size: 3vh;
+    font-size: 1.5em;
     font-weight: 600;
+}
+
+#day:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 90%;
+    height: 73%;
+    border: 1px solid #fff;
+    content: "";
 }
