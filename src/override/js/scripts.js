@@ -1,9 +1,3 @@
-// Background Refresh (Images by unsplash.com)
-var totalCount = 13;
-var num = Math.ceil( Math.random() * totalCount );
-document.body.background = 'images/background-'+num+'.jpg';
-
-
 var dayOfWeek = new Array();
 dayOfWeek[0] = "Sunday";
 dayOfWeek[1] = "Monday";
@@ -16,6 +10,10 @@ var myDate = new Date();
 
 var weekDay = dayOfWeek[myDate.getDay()];
 document.getElementById("day").innerHTML = weekDay;
+
+var url = 'https://unsplash.it/' + window.innerWidth + '/' + window.innerHeight + '/?random';
+var body = document.getElementsByTagName('body')[0];
+body.style.backgroundImage = 'url(' + url + ')';
 
 function startTime() {
     var date = new Date();

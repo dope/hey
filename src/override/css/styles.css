@@ -15,8 +15,7 @@ body {
     background-attachment: fixed;
     background-position: center center;
     -webkit-background-size: cover;
-    background-size: cover;
-
+    background-color: #2b2b2b;
 }
 
 .overlay {
@@ -31,40 +30,65 @@ body {
 .content {
     position: fixed;
     top: 0;
+    left: 0;
     right: 0;
     bottom: 0;
-    left: 0;
     margin: auto;
-    text-align: center;
-    height: 29vw;
     color: #ffffff;
+    height: 36vh;
+    text-align: center;
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    animation: upYouGo 0.8s linear 2s forwards;
 }
 
 .time {
-    font-size: 14vw;
+    font-size: 10vw;
+
 }
 
-#day {
-    position: relative;
-    display: inline-block;
-    background: rgba(0,0,0,.5);
-    padding: 1em 1.2em;
-    margin-top: 2em;
-    text-transform: uppercase;
-    letter-spacing: .4vh;
-    font-size: 1.5em;
-    font-weight: 600;
-}
-
-#day:after {
+.spin {
+    width: 40px;
+    height: 40px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 90%;
-    height: 73%;
-    border: 1px solid #fff;
-    content: "";
+    opacity: 1;
+    animation: offYouGo 0.3s linear 1.5s forwards;
+}
+
+#day {
+    display: table;
+    margin: 2em auto 0 auto;
+    background: rgba(0,0,0,.5);
+    padding: 1em 1.2em;
+    text-transform: uppercase;
+    letter-spacing: .4vh;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+@keyframes upYouGo {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes offYouGo {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
