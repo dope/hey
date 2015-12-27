@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato.ttf')  format('truetype');
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -24,27 +19,34 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,.5);
+    background-image: linear-gradient(rgba(0,0,0,.3), transparent)
 }
 
 .content {
+    font: caption;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+    top: 30px;
+    right: 30px;
     color: #ffffff;
-    height: 36vh;
     text-align: center;
     opacity: 0;
-    transform: translate3d(0, 50px, 0);
-    animation: upYouGo 0.8s linear 2s forwards;
+    animation: upYouGo 0.5s ease-in-out 2.3s forwards;
 }
 
 .time {
-    font-size: 10vw;
+    font-size: 3vw;
+}
 
+.ampm {
+    font-size: 1vw;
+}
+
+#day {
+    font: caption;
+    display: block;
+    text-align: left;
+    font-size: 1.2vw;
+    font-weight: 500;
 }
 
 .spin {
@@ -60,26 +62,13 @@ body {
     animation: offYouGo 0.3s linear 1.5s forwards;
 }
 
-#day {
-    display: table;
-    margin: 2em auto 0 auto;
-    background: rgba(0,0,0,.5);
-    padding: 1em 1.2em;
-    text-transform: uppercase;
-    letter-spacing: .4vh;
-    font-size: 1.5em;
-    font-weight: 600;
-}
-
 @keyframes upYouGo {
     0% {
         opacity: 0;
-        transform: translate3d(0, 50px, 0);
     }
 
     100% {
         opacity: 1;
-        transform: translate3d(0, 0, 0);
     }
 }
 

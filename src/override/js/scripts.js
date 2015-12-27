@@ -15,15 +15,16 @@ var url = 'https://unsplash.it/' + window.innerWidth + '/' + window.innerHeight 
 var body = document.getElementsByTagName('body')[0];
 body.style.backgroundImage = 'url(' + url + ')';
 
-function startTime() {
+function formatAMPM() {
     var date = new Date();
-    var hour = date.getHours();
-    var minute = date.getMinutes();
-    var second = date.getSeconds();
-    minute = checkTime(minute);
-    second = checkTime(second);
-    document.getElementById('time').innerHTML = hour+":"+minute;
-    var t = setTimeout(function(){startTime()},500);
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? '<span class="ampm">pm</span>' : '<span class="ampm">am</span>';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
 }
 
 function checkTime(i) {
@@ -31,4 +32,4 @@ function checkTime(i) {
     return i;
 }
 
-window.onload = startTime;
+document.getElementById("time").innerHTML = formatAMPM();
